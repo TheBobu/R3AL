@@ -2,6 +2,7 @@
 using R3AL.Common.Enums;
 using R3AL.Core.Manager.Interfaces;
 using R3AL.Core.Services.Interfaces;
+using R3AL.Data.Entities;
 using R3AL.Dtos;
 
 namespace R3AL.Core.Manager.Implementations
@@ -37,6 +38,11 @@ namespace R3AL.Core.Manager.Implementations
             }
             loginResultDto.LoginResult = Result.UserNotFound;
             return loginResultDto;
+        }
+
+        public UserDto Register(User user)
+        {
+            return mapper.Map<UserDto>(userService.AddUser(user));
         }
     }
 }

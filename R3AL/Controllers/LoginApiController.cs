@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using R3AL.Common.Enums;
 using R3AL.Core.Manager.Interfaces;
+using R3AL.Data.Entities;
 using R3AL.Dtos;
 
 namespace R3AL.Controllers
@@ -35,6 +36,12 @@ namespace R3AL.Controllers
         public string Get()
         {
             return "test";
+        }
+
+        [HttpPost("Register")]
+        public ActionResult<UserDto>Register(User user)
+        {
+            return authenticationManager.Register(user);
         }
 
     }

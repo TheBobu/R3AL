@@ -1,4 +1,6 @@
-﻿namespace R3AL.Dtos
+﻿using R3AL.Common.Enums;
+
+namespace R3AL.Dtos
 {
     public class UserDto
     {
@@ -7,6 +9,6 @@
         public string LastName { get; set; }
         public int UserId { get; set; }
         public string Username { get; set; }
-        public int UserType { get; set; }
+        public string UserType { get; set; }
     }
 }

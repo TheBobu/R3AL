@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
+using R3AL.Common.Enums;
 using R3AL.Data.Entities;
 using R3AL.Dtos;
+using System;
 
 namespace R3AL.Core.AutoMapper
 {
@@ -9,7 +11,9 @@ namespace R3AL.Core.AutoMapper
         public UserMapper()
         {
             CreateMap<User, UserDto>()
-                .ReverseMap();
+                .ForMember(d => d.UserType, o => o.MapFrom(s => Enum.GetName(typeof(UserType), s.UserType)))
+                .ReverseMap()
+                .ForMember(d => d.UserType, o => o.MapFrom(s => s.UserType));
         }
     }
 }
