@@ -1,9 +1,8 @@
-﻿using R3AL.Common.Enums;
-
-namespace R3AL.Dtos
+﻿namespace R3AL.Dtos
 {
     public class UserDto
     {
+        public string Department { get; set; }
         public string Email { get; set; }
         public string FirstName { get; set; }
         public string JobTitle { get; set; }
