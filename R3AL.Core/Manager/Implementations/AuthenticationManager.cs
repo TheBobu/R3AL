@@ -23,6 +23,15 @@ namespace R3AL.Core.Manager.Implementations
             return mapper.Map<UserDto>(userService.GetUserById(id));
         }
 
+        public UserExtendedDto GetUserExtended(int id)
+        {
+            UserExtendedDto user = new UserExtendedDto();
+            user = mapper.Map<UserExtendedDto>(GetUser(id));
+
+
+            return user;
+        }
+
         public LoginResultDto Login(string username, string password)
         {
             LoginResultDto loginResultDto = new LoginResultDto();

@@ -12,6 +12,8 @@ namespace R3AL.Core.Manager.Interfaces
 
         UserDto GetUser(int id);
 
+        UserExtendedDto GetUserExtended(int id);
+
         UserDto Register(User user);
     }
 }

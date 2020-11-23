@@ -14,6 +14,7 @@ namespace R3AL.Core.AutoMapper
                 .ForMember(d => d.UserType, o => o.MapFrom(s => Enum.GetName(typeof(UserType), s.UserType)))
                 .ReverseMap()
                 .ForMember(d => d.UserType, o => o.MapFrom(s => s.UserType));
+            CreateMap<UserDto, UserExtendedDto>();
         }
     }
 }
