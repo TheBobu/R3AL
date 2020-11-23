@@ -1,3 +1,4 @@
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
@@ -6,7 +7,13 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using R3AL.Core.AutoMapper;
+using R3AL.Core.Manager.Implementations;
+using R3AL.Core.Manager.Interfaces;
+using R3AL.Core.Services.Implementations;
+using R3AL.Core.Services.Interfaces;
 using R3AL.Data;
+using System;
 
 namespace R3AL
 {
@@ -30,6 +37,19 @@ namespace R3AL
             });
 
             ConfigureDatabaseServices(services);
+            ConfigureManagerServices(services);
+            ConfigureMapperServices(services);
+        }
+
+        private void ConfigureMapperServices(IServiceCollection services)
+        {
+            services.AddAutoMapper(typeof(UserMapper));
+        }
+
+        private void ConfigureManagerServices(IServiceCollection services)
+        {
+            services.AddScoped<IAuthenticationManager, AuthenticationManager>();
+            services.AddScoped<IUserService, UserService>();
         }
 
         private void ConfigureDatabaseServices(IServiceCollection services)

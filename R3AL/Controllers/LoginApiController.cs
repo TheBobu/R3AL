@@ -24,5 +24,18 @@ namespace R3AL.Controllers
                 return new NotFoundResult();
             return result;
         }
+
+        [HttpGet("{id}")]
+        public ActionResult<UserDto> GetUser([FromRoute]int id)
+        {
+            return authenticationManager.GetUser(id);
+        }
+
+        [HttpGet]
+        public string Get()
+        {
+            return "test";
+        }
+
     }
 }
