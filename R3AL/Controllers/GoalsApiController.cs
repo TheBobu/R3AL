@@ -10,9 +10,9 @@ namespace R3AL.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class GoalsController : ControllerBase
+    public class GoalsApiController : ControllerBase
     {
-        public GoalsController()
+        public GoalsApiController()
         {
 
         }
