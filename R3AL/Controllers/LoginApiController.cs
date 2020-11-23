@@ -21,8 +21,21 @@ namespace R3AL.Controllers
         {
             var result = authenticationManager.Login(username, password);
             if (result.LoginResult == Result.UserNotFound)
-                return NotFound();
+                return new NotFoundResult();
             return result;
         }
+
+        [HttpGet("{id}")]
+        public ActionResult<UserDto> GetUser([FromRoute]int id)
+        {
+            return authenticationManager.GetUser(id);
+        }
+
+        [HttpGet]
+        public string Get()
+        {
+            return "test";
+        }
+
     }
 }
