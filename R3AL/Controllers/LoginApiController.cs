@@ -32,6 +32,12 @@ namespace R3AL.Controllers
             return authenticationManager.GetUser(id);
         }
 
+        [HttpGet("{id}/Extended")]
+        public ActionResult<UserExtendedDto> GetUserExtended([FromRoute] int id)
+        {
+            return authenticationManager.GetUserExtended(id);
+        }
+
         [HttpGet]
         public string Get()
         {

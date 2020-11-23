@@ -15,6 +15,10 @@ namespace R3AL.Data.Entities
         public string FirstName { get; set; }
 
         [Required]
+        [MaxLength(100)]
+        public string JobTitle { get; set; }
+
+        [Required]
         [MaxLength(50)]
         public string LastName { get; set; }
 
