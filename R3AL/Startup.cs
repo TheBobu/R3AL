@@ -1,10 +1,12 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
+using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using R3AL.Data;
 
 namespace R3AL
 {
@@ -25,6 +27,26 @@ namespace R3AL
             services.AddSpaStaticFiles(configuration =>
             {
                 configuration.RootPath = "ClientApp/dist";
+            });
+
+            ConfigureDatabaseServices(services);
+        }
+
+        private void ConfigureDatabaseServices(IServiceCollection services)
+        {
+            services.AddDbContext<Context>(options =>
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("Database"));
+            });
+
+            services.AddScoped<IContext, Context>(serviceProvider =>
+            {
+                var dbContext = serviceProvider.GetRequiredService<Context>();
+                if (!(dbContext.GetDbConnection() is SqlConnection connection))
+                {
+                    connection = new SqlConnection() { ConnectionString = Configuration.GetConnectionString("Database") };
+                }
+                return dbContext;
             });
         }
 

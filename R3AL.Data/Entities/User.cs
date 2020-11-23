@@ -1,13 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace R3AL.Data.Entities
 {
+    [Table(nameof(User))]
     public class User
     {
-        public int UserId { get; set; }
-        public string Username { get; set; }
+        [Required]
+        [MaxLength(100)]
+        public string Email { get; set; }
+
+        [Required]
+        [MaxLength(50)]
+        public string FirstName { get; set; }
+
+        [Required]
+        [MaxLength(50)]
+        public string LastName { get; set; }
+
+        [Required]
+        [MaxLength(50)]
         public string Password { get; set; }
+
+        public int UserId { get; set; }
+
+        [Required]
+        [MaxLength(100)]
+        public string Username { get; set; }
+
+        [Required]
+        public int UserType { get; set; }
     }
 }

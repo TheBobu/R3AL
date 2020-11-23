@@ -5,8 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Managers\" />
-    <Folder Include="Services\" />
+    <ProjectReference Include="..\R3AL.Dtos\R3AL.Dtos.csproj" />
   </ItemGroup>
 
 </Project>
