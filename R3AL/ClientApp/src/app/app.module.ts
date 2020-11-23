@@ -11,6 +11,7 @@ import { QuizComponent } from "./quiz/quiz.component";
 import { GoalsComponent } from "./goals/goals.component";
 import { ProfileComponent } from "./profile/profile.component";
 import { ProjectsComponent } from "./projects/projects.component";
+import { RegisterComponent } from "./register/register.component";
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { ProjectsComponent } from "./projects/projects.component";
     GoalsComponent,
     ProfileComponent,
     ProjectsComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: "ng-cli-universal" }),
@@ -32,6 +34,7 @@ import { ProjectsComponent } from "./projects/projects.component";
       { path: "goals", component: GoalsComponent },
       { path: "profile", component: ProfileComponent },
       { path: "projects", component: ProjectsComponent },
+      { path: "register", component: RegisterComponent },
     ]),
   ],
   providers: [],
