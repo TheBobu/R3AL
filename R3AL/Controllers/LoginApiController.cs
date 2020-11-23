@@ -21,7 +21,7 @@ namespace R3AL.Controllers
         {
             var result = authenticationManager.Login(username, password);
             if (result.LoginResult == Result.UserNotFound)
-                return NotFound();
+                return new NotFoundResult();
             return result;
         }
     }
