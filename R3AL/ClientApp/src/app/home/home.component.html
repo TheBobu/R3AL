@@ -5,7 +5,7 @@
                 <img src="assets/login-photo.jpg" alt="IMG">
             </div>
 
-            <form class="login100-form validate-form">
+            <form class="login100-form validate-form" method="POST" action="/api/loginapi/authenticate">
                <div class="row">
                    <div class="col-md-12 text-center" style="padding-bottom:3%">
                 <img src="assets/logo.png" alt="IMG" width="110" height="100">
@@ -13,8 +13,7 @@
         </div>
                 <span class="login100-form-title">
                     Member Login
-                </span>
-                <form method="POST" action="/api/loginapi/authenticate">   
+                </span> 
                 <div class="wrap-input100 validate-input">
                     <input class="input100" type="text" name="username" placeholder="Username">
                     <span class="focus-input100"></span>
@@ -36,7 +35,6 @@
                         Login
                     </button>
                 </div>
-            </form> 
                 <div class="text-center p-t-12">
                     <span class="txt1">
                         Forgot
@@ -52,11 +50,8 @@
                         <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
                     </a>
                 </div>
-            </form>
+                </form>
         </div>
     </div>
 </div>
-
-
-<script src="login.js"></script>
 
