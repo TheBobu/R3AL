@@ -13,7 +13,6 @@ using R3AL.Core.Manager.Interfaces;
 using R3AL.Core.Services.Implementations;
 using R3AL.Core.Services.Interfaces;
 using R3AL.Data;
-using System;
 
 namespace R3AL
 {
@@ -51,6 +50,7 @@ namespace R3AL
         private void ConfigureManagerServices(IServiceCollection services)
         {
             services.AddScoped<IAuthenticationManager, AuthenticationManager>();
+            services.AddScoped<IGoalManager, GoalManager>();
 
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IGoalService, GoalService>();

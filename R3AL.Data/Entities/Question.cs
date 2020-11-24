@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace R3AL.Data.Entities
@@ -16,8 +17,5 @@ namespace R3AL.Data.Entities
         [Required]
         [MaxLength(300)]
         public string Title { get; set; }
-
-        [Required]
-        public int Answer { get; set; }
     }
 }

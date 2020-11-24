@@ -12,5 +12,7 @@ namespace R3AL.Data.Entities
         public int GoalId { get; set; }
 
         public Goal Goal { get; set; }
+
+        public int Score { get; set; }
     }
 }

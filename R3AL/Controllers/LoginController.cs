@@ -23,7 +23,7 @@ namespace R3AL.Controllers
             var result = authenticationManager.Login(username, password);
             if (result.LoginResult == Result.UserNotFound)
                 return new NotFoundResult();
-            return RedirectToAction("GetUser", result.User.UserId);
+            return result;
         }
 
         [HttpGet("{id}")]

@@ -7,7 +7,7 @@ namespace R3AL.Data.Entities
     public class Project
     {
         [Required]
-        public string Descritption { get; set; }
+        public string Description { get; set; }
 
         [Required]
         [MaxLength(200)]
