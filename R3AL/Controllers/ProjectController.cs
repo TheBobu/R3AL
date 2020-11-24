@@ -32,7 +32,7 @@ namespace R3AL.Controllers
             return projectManager.GetProjectsByGoaldId(id);
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("users/{id}")]
         public ActionResult<List<ProjectDto>> GetProjectsByUserId([FromRoute] int id)
         {
             return projectManager.GetProjectsByUserId(id);
