@@ -21,6 +21,8 @@ namespace R3AL.Data
         public DbSet<Quiz> Quizzes { get; set; }
         public DbSet<ProjectGoal> ProjectGoals { get; set; }
         public DbSet<Response> Responses { get; set; }
+        public DbSet<Job> Jobs { get; set; }
+        public DbSet<JobUser> JobUsers { get; set; }
 
         public ChangeTracker GetChangeTracker()
         {
