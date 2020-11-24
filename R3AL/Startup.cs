@@ -44,12 +44,18 @@ namespace R3AL
         private void ConfigureMapperServices(IServiceCollection services)
         {
             services.AddAutoMapper(typeof(UserMapper));
+            services.AddAutoMapper(typeof(GoalMapper));
         }
 
         private void ConfigureManagerServices(IServiceCollection services)
         {
             services.AddScoped<IAuthenticationManager, AuthenticationManager>();
+
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IGoalService, GoalService>();
+            services.AddScoped<IQuizService, QuizService>();
+            services.AddScoped<IProjectService, ProjectService>();
+            services.AddScoped<IQuestionService, QuestionService>();
         }
 
         private void ConfigureDatabaseServices(IServiceCollection services)

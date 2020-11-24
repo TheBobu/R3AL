@@ -21,5 +21,7 @@ namespace R3AL.Data.Entities
 
         [Required]
         public int UserId { get; set; }
+
+        public User User { get; set; }
     }
 }

@@ -4,17 +4,26 @@ using R3AL.Core.Manager.Interfaces;
 using R3AL.Core.Services.Interfaces;
 using R3AL.Data.Entities;
 using R3AL.Dtos;
+using System.Collections.Generic;
 
 namespace R3AL.Core.Manager.Implementations
 {
     public class AuthenticationManager : IAuthenticationManager
     {
         private readonly IUserService userService;
+        private readonly IGoalService goalService;
+        private readonly IProjectService projectService;
         private readonly IMapper mapper;
 
-        public AuthenticationManager(IUserService userService, IMapper mapper)
+        public AuthenticationManager(
+            IUserService userService, 
+            IGoalService goalService, 
+            IProjectService projectService, 
+            IMapper mapper)
         {
             this.userService = userService;
+            this.goalService = goalService;
+            this.projectService = projectService;
             this.mapper = mapper;
         }
 
@@ -25,9 +34,13 @@ namespace R3AL.Core.Manager.Implementations
 
         public UserExtendedDto GetUserExtended(int id)
         {
-            UserExtendedDto user = new UserExtendedDto();
-            user = mapper.Map<UserExtendedDto>(GetUser(id));
+            var user = mapper.Map<UserExtendedDto>(GetUser(id));
 
+            var goals = mapper.Map<List<GoalLightDto>>(goalService.GetGoalsByUserId(id));
+            user.Goals = goals;
+
+            var projects = mapper.Map<List<ProjectLightDto>>(projectService.GetProjectsByUserId(id));
+            user.Projects = projects;
 
             return user;
         }

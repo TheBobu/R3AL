@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
 
 namespace R3AL.Data.Entities
 {
@@ -9,8 +7,17 @@ namespace R3AL.Data.Entities
     public class Question
     {
         public int QuestionId { get; set; }
+
+        [Required]
         public int QuizId { get; set; }
+
+        public Quiz Quiz { get; set; }
+
+        [Required]
+        [MaxLength(300)]
         public string Title { get; set; }
+
+        [Required]
         public int Answer { get; set; }
     }
 }

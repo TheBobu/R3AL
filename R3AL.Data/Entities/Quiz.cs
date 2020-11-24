@@ -10,5 +10,7 @@ namespace R3AL.Data.Entities
 
         [Required]
         public int GoalId { get; set; }
+
+        public Goal Goal { get; set; }
     }
 }
