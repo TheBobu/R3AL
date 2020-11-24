@@ -45,6 +45,7 @@ namespace R3AL
         {
             services.AddAutoMapper(typeof(UserMapper));
             services.AddAutoMapper(typeof(GoalMapper));
+            services.AddAutoMapper(typeof(ProjectMapper));
         }
 
         private void ConfigureManagerServices(IServiceCollection services)

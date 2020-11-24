@@ -5,6 +5,7 @@ using R3AL.Core.Services.Interfaces;
 using R3AL.Data.Entities;
 using R3AL.Dtos;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace R3AL.Core.Manager.Implementations
 {

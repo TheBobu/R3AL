@@ -57,16 +57,19 @@ namespace R3AL.Core.Services.Implementations
         public IEnumerable<Project> GetProjectsByGoalId(int goalId)
         {
             return Context
-                .Projects
+                .ProjectGoals
                 .Where(x => x.Goal.GoalId.Equals(goalId))
+                .Select(x => x.Project)
                 .ToList();
         }
 
         public IEnumerable<Project> GetProjectsByUserId(int userId)
         {
             return Context
-                .Projects
+                .ProjectGoals
                 .Where(x => x.Goal.UserId.Equals(userId))
+                .Select(x => x.Project)
+                .Distinct()
                 .ToList();
         }
 
