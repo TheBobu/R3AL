@@ -2,6 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { Component, Inject } from "@angular/core";
 import { inject } from "@angular/core/testing";
 import { getBaseUrl } from "src/main";
+import {CommonModule} from "@angular/common";
 
 @Component({
   selector: "app-profile",
@@ -13,18 +14,10 @@ export class ProfileComponent {
   
 
    constructor(http:HttpClient, @Inject('BASE_URL') baseUrl:string){
-  //   http.get<Profile[]>
-  this.user={
-  username:"andreeapurta",
-  firstName:"Andreea",
-  lastName:"Purta", 
-  jobTitle:"Student" , 
-  department:"Marketing",
-  email:"andreea@gmail.com", 
-  id: 1,
-  userType:"client", 
-  goals:[{id:1,title:"C#Developer", goalStatus:"inProgress", currentProgress:5, milestone:10 }], 
-  projects:[{link:"#", title:"TestProject"}]};
+  
+  http.get<Profile>(baseUrl+"api/login/1/extended").subscribe(result=>{
+    this.user= result;
+  }, error=>console.log(error));
   }
 }
 
@@ -46,7 +39,7 @@ interface Goal{
   title: string;
   goalStatus: string;
   currentProgress: number;
-  milestone: number;
+  milestones: number;
 }
 
 interface Project{
