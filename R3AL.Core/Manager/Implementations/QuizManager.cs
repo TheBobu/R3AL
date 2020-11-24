@@ -20,9 +20,23 @@ namespace R3AL.Core.Manager.Implementations
             this.quizService = quizService;
             this.questionService = questionService;
         }
-        public IEnumerable<QuizDto> GetQuizzes(int goalId)
+
+        public QuizDto GetQuiz(int quizId)
         {
-            var quizzes = mapper.Map<IEnumerable<QuizDto>>(quizService.GetQuizzesByGoalId(goalId));
+            var quiz = mapper.Map<QuizDto>(quizService.GetQuizById(quizId));
+            var questions = mapper.Map<List<QuestionDto>>(questionService.GetQuestionsByQuizId(quiz.QuizId));
+            foreach (var question in questions)
+            {
+                var responses = mapper.Map<List<ResponseDto>>(questionService.GetResponses(question.QuestionId));
+                question.Responses = responses;
+            }
+            quiz.Questions = questions;
+            return quiz;
+        }
+
+        public List<QuizDto> GetQuizzes(int goalId)
+        {
+            var quizzes = mapper.Map<List<QuizDto>>(quizService.GetQuizzesByGoalId(goalId));
             foreach(var quiz in quizzes)
             {
                 var questions = mapper.Map<List<QuestionDto>>(questionService.GetQuestionsByQuizId(quiz.QuizId));

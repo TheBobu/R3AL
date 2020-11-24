@@ -5,8 +5,9 @@ using R3AL.Dtos;
 
 namespace R3AL.Core.Manager.Interfaces
 {
-    interface IQuizManager
+    public interface IQuizManager
     {
-        IEnumerable<QuizDto> GetQuizzes(int goalId);
+        List<QuizDto> GetQuizzes(int goalId);
+        QuizDto GetQuiz(int quizId);
     }
 }

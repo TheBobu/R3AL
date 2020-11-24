@@ -45,12 +45,14 @@ namespace R3AL
             services.AddAutoMapper(typeof(UserMapper));
             services.AddAutoMapper(typeof(GoalMapper));
             services.AddAutoMapper(typeof(ProjectMapper));
+            services.AddAutoMapper(typeof(QuizMapper));
         }
 
         private void ConfigureManagerServices(IServiceCollection services)
         {
             services.AddScoped<IAuthenticationManager, AuthenticationManager>();
             services.AddScoped<IGoalManager, GoalManager>();
+            services.AddScoped<IQuizManager, QuizManager>();
 
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IGoalService, GoalService>();
