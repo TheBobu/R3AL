@@ -10,6 +10,10 @@ namespace R3AL.Data
     public interface IContext
     {
         public DbSet<User> Users { get; set; }
+        public DbSet<Goal> Goals { get; set; }
+        public DbSet<Project> Projects { get; set; }
+        public DbSet<Question> Questions { get; set; }
+        public DbSet<Quiz> Quizzes { get; set; }
 
         ChangeTracker GetChangeTracker();
 

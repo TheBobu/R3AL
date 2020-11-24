@@ -13,9 +13,9 @@ namespace R3AL.Core.Services.Implementations
 
         public User AddUser(User user)
         {
-            Context
+            user = Context
                 .Users
-                .Add(user);
+                .Add(user).Entity;
 
             Context
                 .SaveAsync()
