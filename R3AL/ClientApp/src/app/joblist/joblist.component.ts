@@ -5,14 +5,14 @@ import { getBaseUrl } from "src/main";
 @Component({
   selector: 'app-joblist',
   templateUrl: './joblist.component.html',
-  styleUrls: ['./joblist.component.css']
+  styleUrls: ['./joblist.component.scss']
 })
 export class JoblistComponent {
   public job : Joblist;
 
 constructor(http:HttpClient, @Inject('BASE_URL') baseUrl:string){
   
-  http.get<Joblist>(baseUrl+"api/").subscribe(result=>{
+  http.get<Joblist>(baseUrl+"api/jobs/list").subscribe(result=>{
     this.job= result;
   }, error=>console.log(error));
   }
@@ -21,7 +21,7 @@ interface Joblist{
   name: string;
   numberOfProjects: number;
   numberOfQuizes: number;
-  numberOfDocs: number;
+  numberOfGoals: number;
   status: string;
   statusProgress: number;
   milestones: number;
