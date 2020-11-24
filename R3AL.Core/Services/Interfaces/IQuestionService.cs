@@ -12,5 +12,6 @@ namespace R3AL.Core.Services.Interfaces
         Question GetQuestionById(int questionId);
         IEnumerable<Question> GetQuestionsByQuizId(int quizId);
         Question UpdateQuestion(Question question);
+        IEnumerable<Response> GetResponses(int questionId);
     }
 }

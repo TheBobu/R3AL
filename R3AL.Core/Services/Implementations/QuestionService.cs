@@ -49,6 +49,14 @@ namespace R3AL.Core.Services.Implementations
                 .ToList();
         }
 
+        public IEnumerable<Response> GetResponses(int questionId)
+        {
+            return Context
+                .Responses
+                .Where(x => x.QuestionId.Equals(questionId))
+                .ToList();
+        }
+
         public Question UpdateQuestion(Question question)
         {
             Context
