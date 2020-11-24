@@ -8,11 +8,11 @@ namespace R3AL.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class LoginApiController : ControllerBase
+    public class LoginController : ControllerBase
     {
         private readonly IAuthenticationManager authenticationManager;
 
-        public LoginApiController(IAuthenticationManager authenticationManager)
+        public LoginController(IAuthenticationManager authenticationManager)
         {
             this.authenticationManager = authenticationManager;
         }
