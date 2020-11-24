@@ -2,16 +2,29 @@
 
 namespace R3AL.Data.Migrations
 {
-    public partial class JobGoals : Migration
+    public partial class Job : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.AddColumn<string>(
+                name: "Title",
+                table: "Quiz",
+                type: "nvarchar(max)",
+                nullable: false,
+                defaultValue: "");
+
             migrationBuilder.AddColumn<int>(
                 name: "Milestones",
                 table: "Job",
                 type: "int",
                 nullable: false,
                 defaultValue: 0);
+
+            migrationBuilder.AddColumn<string>(
+                name: "Requirements",
+                table: "Job",
+                type: "nvarchar(max)",
+                nullable: true);
 
             migrationBuilder.AddColumn<int>(
                 name: "StatusProgress",
@@ -24,8 +37,7 @@ namespace R3AL.Data.Migrations
                 name: "JobId",
                 table: "Goal",
                 type: "int",
-                nullable: false,
-                defaultValue: 0);
+                nullable: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_Goal_JobId",
@@ -38,7 +50,7 @@ namespace R3AL.Data.Migrations
                 column: "JobId",
                 principalTable: "Job",
                 principalColumn: "JobId",
-                onDelete: ReferentialAction.Cascade);
+                onDelete: ReferentialAction.Restrict);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -52,7 +64,15 @@ namespace R3AL.Data.Migrations
                 table: "Goal");
 
             migrationBuilder.DropColumn(
+                name: "Title",
+                table: "Quiz");
+
+            migrationBuilder.DropColumn(
                 name: "Milestones",
+                table: "Job");
+
+            migrationBuilder.DropColumn(
+                name: "Requirements",
                 table: "Job");
 
             migrationBuilder.DropColumn(

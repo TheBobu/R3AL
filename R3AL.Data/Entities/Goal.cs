@@ -13,8 +13,7 @@ namespace R3AL.Data.Entities
         [Required]
         public int GoalStatus { get; set; }
 
-        [Required]
-        public int JobId { get; set; }
+        public int? JobId { get; set; }
 
         public Job Job { get; set; }
 

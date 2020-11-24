@@ -35,7 +35,7 @@ namespace R3AL.Data.Migrations
                     b.Property<int>("GoalStatus")
                         .HasColumnType("int");
 
-                    b.Property<int>("JobId")
+                    b.Property<int?>("JobId")
                         .HasColumnType("int");
 
                     b.Property<int?>("Milestones")
@@ -283,9 +283,7 @@ namespace R3AL.Data.Migrations
                 {
                     b.HasOne("R3AL.Data.Entities.Job", "Job")
                         .WithMany()
-                        .HasForeignKey("JobId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("JobId");
 
                     b.HasOne("R3AL.Data.Entities.User", "User")
                         .WithMany()
