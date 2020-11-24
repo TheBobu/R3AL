@@ -3,7 +3,7 @@ import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { RouterModule } from "@angular/router";
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from "./app.component";
 import { NavMenuComponent } from "./nav-menu/nav-menu.component";
 import { HomeComponent } from "./home/home.component";
@@ -12,6 +12,7 @@ import { GoalsComponent } from "./goals/goals.component";
 import { ProfileComponent } from "./profile/profile.component";
 import { ProjectsComponent } from "./projects/projects.component";
 import { RegisterComponent } from "./register/register.component";
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,8 @@ import { RegisterComponent } from "./register/register.component";
     BrowserModule.withServerTransition({ appId: "ng-cli-universal" }),
     HttpClientModule,
     FormsModule,
+    NgbModule,
+    AngularFontAwesomeModule,
     RouterModule.forRoot([
       { path: "", component: HomeComponent, pathMatch: "full" },
       { path: "quiz", component: QuizComponent },
