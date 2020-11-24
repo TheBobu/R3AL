@@ -13,6 +13,7 @@ import { ProfileComponent } from "./profile/profile.component";
 import { ProjectsComponent } from "./projects/projects.component";
 import { RegisterComponent } from "./register/register.component";
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { JoblistComponent } from "./joblist/joblist.component";
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     ProfileComponent,
     ProjectsComponent,
     RegisterComponent,
+    JoblistComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: "ng-cli-universal" }),
@@ -38,6 +40,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
       { path: "profile", component: ProfileComponent },
       { path: "projects", component: ProjectsComponent },
       { path: "register", component: RegisterComponent },
+      { path: "joblist", component: JoblistComponent },
     ]),
   ],
   providers: [],
