@@ -46,6 +46,7 @@ namespace R3AL
             services.AddAutoMapper(typeof(GoalMapper));
             services.AddAutoMapper(typeof(ProjectMapper));
             services.AddAutoMapper(typeof(QuizMapper));
+            services.AddAutoMapper(typeof(JobMapper));
         }
 
         private void ConfigureManagerServices(IServiceCollection services)
