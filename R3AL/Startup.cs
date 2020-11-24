@@ -53,12 +53,14 @@ namespace R3AL
             services.AddScoped<IAuthenticationManager, AuthenticationManager>();
             services.AddScoped<IGoalManager, GoalManager>();
             services.AddScoped<IQuizManager, QuizManager>();
+            services.AddScoped<IJobManager, JobManager>();
 
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IGoalService, GoalService>();
             services.AddScoped<IQuizService, QuizService>();
             services.AddScoped<IProjectService, ProjectService>();
             services.AddScoped<IQuestionService, QuestionService>();
+            services.AddScoped<IJobService, JobService>();
         }
 
         private void ConfigureDatabaseServices(IServiceCollection services)

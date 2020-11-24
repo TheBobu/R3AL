@@ -15,7 +15,11 @@ namespace R3AL.Core.Services.Interfaces
 
         IEnumerable<Project> GetProjectsByGoalId(int goalId);
 
+        IEnumerable<Project> GetProjectsByJobId(int id);
+
         IEnumerable<Project> GetProjectsByUserId(int userId);
+
+        int GetNumberOfProjects(int goalId);
 
         Project UpdateProject(Project project);
     }

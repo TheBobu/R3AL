@@ -9,8 +9,10 @@ namespace R3AL.Core.Services.Interfaces
     {
         Quiz AddQuiz(Quiz quiz);
         bool DeleteQuiz(int quizId);
+        int GetNumberOfQuizzes(int goalId);
         Quiz GetQuizById(int quizId);
         IEnumerable<Quiz> GetQuizzesByGoalId(int goalId);
+        IEnumerable<Quiz> GetQuizzesByJobId(int jobId);
         Quiz UpdateQuiz(Quiz quiz);
     }
 }
