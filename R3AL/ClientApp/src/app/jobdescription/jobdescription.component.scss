@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+a{
+	text-decoration: none;
+}
+.course {
+	background-color: #fff;
+	border-radius: 10px;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+	display: flex;
+	max-width: 100%;
+	margin: 20px;
+	overflow: hidden;
+}
+
+.course h6 {
+	margin: 4%;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+.course h2 {
+	letter-spacing: 1px;
+	margin: 10px 0;
+}
+
+.course-preview {
+	background-color: #128CFC;
+	color: #fff;
+	padding: 50px;
+	max-width: 250px;
+}
+
+.course-preview a {
+	color: #fff;
+	display: inline-block;
+	font-size: 12px;
+	opacity: 0.6;
+	margin-top: 30px;
+	text-decoration: none;
+}
+
+.course-info {
+	padding: 30px;
+	position: relative;
+	width: 100%;
+}
+
+.progress-container {
+	position: absolute;
+	top: 30px;
+	right: 30px;
+	text-align: right;
+	width: 150px;
+}
+
+.progress {
+	background-color: #ddd;
+	border-radius: 3px;
+	height: 5px;
+	width: 100%;
+}
+
+.progress::after {
+	border-radius: 3px;
+	background-color: #128CFC;
+	content: '';
+	position: relative;
+	top: 0;
+	left: 0;
+	height: 5px;
+	width: 66%;
+}
+
+.progress-text {
+	font-size: 10px;
+	opacity: 0.6;
+	letter-spacing: 1px;
+}
+
+.btn {
+	background-color: #128CFC;
+  border: 0;
+  position: fixed;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+	color: #fff;
+	font-size: 16px;
+	padding: 12px 25px;
+	bottom: 30px;
+	right: 30px;
+	letter-spacing: 1px;
+}
+
+
+$pri: #128CFC;
+$sec: #fffffe;
+$dark-pri: #0B5AA2;
+.items {
+    width: 300px;
+    background: $sec;
+    box-shadow: 0 3px 6px rgba(black,0.16), 0 3px 6px rgba(black,0.23);
+    border-top: 10px solid $dark-pri;
+  }
+  
+  .items-head p{
+    padding: 5px 20px;
+    margin: 10px;
+    color: #0B5AA2;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  
+  .items-head hr {
+    width: 20%;
+    margin: 0px 30px;
+    border: 1px solid $dark-pri;
+  }
+  
+  .items-body {
+    padding: 10px;
+    margin: 10px;
+    display: grid;
+    grid-gap: 10px;
+  }
+  
+  .items-body-content {
+    padding: 10px;
+    padding-right: 0px;
+    display: grid;
+    grid-template-columns: 10fr 1fr;
+    font-size: 13px;
+    grid-gap: 10px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    
+  }
+  
+  
+  .items-body-content i {
+    align-self: center;
+    font-size: 15px;
+    color: $dark-pri;
+    font-weight: bold;
+    animation: icon 1.5s infinite forwards;
+  }
+  
+  @keyframes icon {
+    0%,100%{
+      transform: translate(0px);
+    }
+    50% {
+      transform: translate(3px);
+    }
+  }
+
+  .profilepage{
+    padding-top:5% ;
+}
+
+body{
+    margin-top:20px;
+    color: #1a202c;
+    text-align: left;
+    background-color: #e2e8f0;    
+}
+.main-body {
+    padding: 15px;
+}
+.card {
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06);
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 0 solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+}
+
+.card-body {
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 1rem;
+}
+
+.gutters-sm {
+    margin-right: -8px;
+    margin-left: -8px;
+}
+
+.gutters-sm>.col, .gutters-sm>[class*=col-] {
+    padding-right: 8px;
+    padding-left: 8px;
+}
+.mb-3, .my-3 {
+    margin-bottom: 1rem!important;
+}
+
+.bg-gray-300 {
+    background-color: #e2e8f0;
+}
+.h-100 {
+    height: 100%!important;
+}
+.shadow-none {
+    box-shadow: none!important;
+}
+
+//projects
+$pri: #128CFC;
+$sec: #fffffe;
+$dark-pri: #0B5AA2;
+.items {
+    width: 300px;
+    background: $sec;
+    box-shadow: 0 3px 6px rgba(black,0.16), 0 3px 6px rgba(black,0.23);
+    border-top: 10px solid $dark-pri;
+  }
+  
+  .items-body {
+    text-align: justify;
+    padding: 10px;
+    margin: 10px;
+    display: inline;
+    grid-gap: 10px;
+  }
+  
+  .items-body-content {
+    padding: 10px;
+    padding-right: 0px;
+    display: inline;
+    grid-template-columns: 10fr 1fr;
+    font-size: 13px;
+    grid-gap: 10px;
+    cursor: pointer;
+    
+  }
+  
+  .items-body-content i {
+    align-self: center;
+    font-size: 15px;
+    color: $dark-pri;
+    font-weight: bold;
+    animation: icon 1.5s infinite forwards;
+  }
+  
+  @keyframes icon {
+    0%,100%{
+      transform: translate(0px);
+    }
+    50% {
+      transform: translate(3px);
+    }
+  }
