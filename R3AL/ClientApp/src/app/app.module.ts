@@ -3,7 +3,7 @@ import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { RouterModule } from "@angular/router";
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { AppComponent } from "./app.component";
 import { NavMenuComponent } from "./nav-menu/nav-menu.component";
 import { HomeComponent } from "./home/home.component";
@@ -12,7 +12,7 @@ import { GoalsComponent } from "./goals/goals.component";
 import { ProfileComponent } from "./profile/profile.component";
 import { ProjectsComponent } from "./projects/projects.component";
 import { RegisterComponent } from "./register/register.component";
-import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { AngularFontAwesomeModule } from "angular-font-awesome";
 import { JoblistComponent } from "./joblist/joblist.component";
 import { JobdescriptionComponent } from "./jobdescription/jobdescription.component";
 

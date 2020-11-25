@@ -1,10 +1,11 @@
-import { Component, Inject } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component, Inject } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: "app-home",
+  templateUrl: "./home.component.html",
+  styleUrls: ["./home.component.css"],
 })
 export class HomeComponent {
   public username: string;
@@ -13,19 +14,27 @@ export class HomeComponent {
   public http: HttpClient;
   public message: string;
   public result: Response;
-  constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
+  constructor(
+    http: HttpClient,
+    @Inject("BASE_URL") baseUrl: string,
+    private router: Router
+  ) {
     this.url = baseUrl;
     this.http = http;
   }
 
   onClick() {
-    this.http.post<Response>(this.url + 'api/login/authenticate', { username: this.username, password: this.password })
-      .subscribe(x => {
+    this.http
+      .post<Response>(this.url + "api/login/authenticate", {
+        username: this.username,
+        password: this.password,
+      })
+      .subscribe((x) => {
         this.result = x;
         if (this.result.loginResult == 2) {
           this.message = "Success";
-        }
-        else {
+          this.router.navigate(["/profile", { id: this.result.user.userId }]);
+        } else {
           this.message = "Login Failed!";
         }
         console.log(this.result);
@@ -44,6 +53,6 @@ interface Profile {
   jobTitle: string;
   department: string;
   email: string;
-  id: number;
+  userId: number;
   userType: string;
 }

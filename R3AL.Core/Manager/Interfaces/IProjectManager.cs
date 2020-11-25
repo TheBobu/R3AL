@@ -11,5 +11,7 @@ namespace R3AL.Core.Manager.Interfaces
         ProjectDto GetProject(int projectId);
 
         List<ProjectDto> GetProjectsByGoaldId(int goalId);
+
+        ProjectDto UpdateProject(int projectId);
     }
 }

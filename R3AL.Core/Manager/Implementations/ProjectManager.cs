@@ -39,6 +39,9 @@ namespace R3AL.Core.Manager.Implementations
             return mapper.Map<List<ProjectDto>>(projectService.GetProjectsByGoalId(goalId));
         }
 
-
+        public ProjectDto UpdateProject(int projectId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
