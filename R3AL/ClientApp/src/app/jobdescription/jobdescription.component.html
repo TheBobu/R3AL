@@ -1,1 +1,69 @@
-<h1>Hello Team Andre</h1>
+<app-nav-menu></app-nav-menu>
+<div class="container">
+  <div class="courses-container">
+    <div class="course">
+      <div class="course-preview">
+        <h6>Title</h6>
+        <h2>{{ job.name }}</h2>
+      </div>
+      <div class="course-info">
+        <div class="items-body">
+          <div class="items-body-content">
+            <h5>Description</h5>
+            <p>{{ job.description }}</p>
+            <br />
+            <h5>Requirements</h5>
+            <p>{{ job.requirements }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4 md-4">
+        <div class="course h-100">
+          <div class="card-body">
+            <h6 class="d-flex align-items-center mb-3">Projects</h6>
+            <div *ngFor="let item of job.projects">
+              <div class="items-body-content" style="display: grid">
+                <span>{{ item.title }}</span>
+                <a href="{{ item.link }}"><i class="fa fa-angle-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4 md-4">
+        <div class="course h-100">
+          <div class="card-body">
+            <h6 class="d-flex align-items-center mb-3">Quizes</h6>
+            <div *ngFor="let item of job.quizzes">
+              <div class="items-body-content" style="display: grid">
+                <span>{{ item.title }}</span>
+                <a href="#"><i class="fa fa-angle-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 md-4">
+        <div class="course h-100">
+          <div class="card-body">
+            <h6 class="d-flex align-items-center mb-3">Goals</h6>
+            <div *ngFor="let item of job.goals">
+              <div class="items-body-content" style="display: grid">
+                <span>{{ item.title }}</span>
+                <a href="#"><i class="fa fa-angle-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <button class="btn pull-right">Enroll</button>
+    </div>
+  </div>
+</div>

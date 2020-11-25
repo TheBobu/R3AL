@@ -14,6 +14,7 @@ namespace R3AL.Core.AutoMapper
             CreateMap<Quiz, QuizDto>();
             CreateMap<Question, QuestionDto>();
             CreateMap<Response, ResponseDto>();
+            CreateMap<Quiz, QuizLightDto>();
         }
     }
 }
