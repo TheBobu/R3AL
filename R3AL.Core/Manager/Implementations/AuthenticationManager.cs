@@ -50,13 +50,16 @@ namespace R3AL.Core.Manager.Implementations
         {
             LoginResultDto loginResultDto = new LoginResultDto();
             var user = userService.GetUserByUsername(username);
-            if (user.Username.Equals(username))
+            if (user != null)
             {
-                if(user.Password.Equals(password))
+                if (user.Username.Equals(username))
                 {
-                    loginResultDto.LoginResult = Result.Success;
-                    loginResultDto.User = user;
-                    return loginResultDto;
+                    if (user.Password.Equals(password))
+                    {
+                        loginResultDto.LoginResult = Result.Success;
+                        loginResultDto.User = user;
+                        return loginResultDto;
+                    }
                 }
             }
             loginResultDto.LoginResult = Result.UserNotFound;

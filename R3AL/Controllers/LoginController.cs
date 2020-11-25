@@ -18,11 +18,9 @@ namespace R3AL.Controllers
         }
 
         [HttpPost("Authenticate")]
-        public ActionResult<LoginResultDto> Authenticate(string username, string password)
+        public ActionResult<LoginResultDto> Authenticate([FromBody]LoginDto login)
         {
-            var result = authenticationManager.Login(username, password);
-            if (result.LoginResult == Result.UserNotFound)
-                return new NotFoundResult();
+            var result = authenticationManager.Login(login.Username, login.Password);
             return result;
         }
 
