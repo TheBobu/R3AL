@@ -8,22 +8,26 @@ import { getBaseUrl } from "src/main";
   styleUrls: ['./joblist.component.scss']
 })
 export class JoblistComponent {
-  // public job : Joblist;
+  public job : Joblist[];
 
-// constructor(http:HttpClient, @Inject('BASE_URL') baseUrl:string){
+constructor(http:HttpClient, @Inject('BASE_URL') baseUrl:string){
   
-  // http.get<Joblist>(baseUrl+"api/jobs/1/list").subscribe(result=>{
-  //   this.job= result;
-  // }, error=>console.log(error));
-  // }
+  http.get<Joblist[]>(baseUrl+"api/jobs/1/list").subscribe(result=>{
+    this.job= result;
+  }, error=>console.log(error));
+  }
 }
-// interface Joblist{
-//   name: string;
-//   numberOfProjects: number;
-//   numberOfQuizes: number;
-//   numberOfGoals: number;
-//   status: string;
-//   statusProgress: number;
-//   milestones: number;
-// }
+interface Joblist{
+  jobId:number;
+  name: string;
+  description:string;
+  imgPath: string;
+  numberOfProjects: number;
+  numberOfQuizzes: number;
+  numberOfGoals: number;
+  status: string;
+  statusProgress: number;
+  milestones: number;
+  requirements: string;
+}
 

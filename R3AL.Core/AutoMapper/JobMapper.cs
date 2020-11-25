@@ -13,6 +13,7 @@ namespace R3AL.Core.AutoMapper
         {
             CreateMap<Job, JobDto>();
             CreateMap<Job, JobExtendedDto>();
+            CreateMap<JobDto, JobExtendedDto>();
         }
     }
 }
