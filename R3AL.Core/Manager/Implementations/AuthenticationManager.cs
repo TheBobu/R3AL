@@ -33,6 +33,11 @@ namespace R3AL.Core.Manager.Implementations
             return mapper.Map<UserDto>(userService.GetUserById(id));
         }
 
+        public UserDto GetUserByUsername(string username)
+        {
+            return mapper.Map<UserDto>(userService.GetUserByUsername(username));
+        }
+
         public UserExtendedDto GetUserExtended(int id)
         {
             var user = mapper.Map<UserExtendedDto>(GetUser(id));

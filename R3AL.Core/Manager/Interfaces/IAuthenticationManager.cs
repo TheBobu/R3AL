@@ -1,8 +1,5 @@
 ﻿using R3AL.Data.Entities;
 using R3AL.Dtos;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace R3AL.Core.Manager.Interfaces
 {
@@ -15,5 +12,7 @@ namespace R3AL.Core.Manager.Interfaces
         UserExtendedDto GetUserExtended(int id);
 
         UserDto Register(User user);
+
+        UserDto GetUserByUsername(string username);
     }
 }

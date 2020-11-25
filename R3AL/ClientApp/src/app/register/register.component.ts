@@ -26,8 +26,7 @@ export class RegisterComponent {
     this.http
       .post<Profile>(this.url + "api/login/register", this.user)
       .subscribe((x) => {
-          this.user = x;
-          this.router.navigate(["/"]);
+          this.router.navigate(["/profile", { id: x.userId }]);
       });
   }
 }
