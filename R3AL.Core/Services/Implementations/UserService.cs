@@ -13,15 +13,16 @@ namespace R3AL.Core.Services.Implementations
 
         public User AddUser(User user)
         {
-            user = Context
+            var newUser = user;
+            Context
                 .Users
-                .Add(user).Entity;
+                .Add(newUser);
 
             Context
                 .SaveAsync()
                 .ConfigureAwait(false);
 
-            return user;
+            return newUser;
         }
 
         public bool DeleteUser(int id)

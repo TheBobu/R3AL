@@ -43,7 +43,7 @@ namespace R3AL.Controllers
         }
 
         [HttpPost("Register")]
-        public ActionResult<UserDto>Register(User user)
+        public ActionResult<UserDto>Register([FromBody]User user)
         {
             return authenticationManager.Register(user);
         }
