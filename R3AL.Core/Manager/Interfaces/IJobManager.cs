@@ -9,6 +9,6 @@ namespace R3AL.Core.Manager.Interfaces
 
         JobExtendedDto GetJobExtended(int id);
 
-        List<JobDto> GetJobs();
+        List<JobDto> GetJobs(int userId);
     }
 }
