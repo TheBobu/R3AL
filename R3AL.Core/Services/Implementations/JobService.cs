@@ -58,6 +58,14 @@ namespace R3AL.Core.Services.Implementations
                .ToList();
         }
 
+        public bool IsEnrolled(int userId, int jobId)
+        {
+            return Context
+                .JobUsers
+                .Where(x => x.UserId.Equals(userId) && x.JobId.Equals(jobId))
+                .Any();
+        }
+
         public Job UpdateJob(Job job)
         {
             Context

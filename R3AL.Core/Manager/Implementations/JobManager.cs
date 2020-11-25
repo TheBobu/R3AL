@@ -54,13 +54,22 @@ namespace R3AL.Core.Manager.Implementations
             return job;
         }
 
-        public List<JobDto> GetJobs()
+        public List<JobDto> GetJobs(int userId)
         {
             var jobs = new List<JobDto>();
 
             foreach (var job in jobService.GetJobs())
             {
-                jobs.Add(GetJob(job.JobId));
+                var aux = GetJob(job.JobId);
+                if (jobService.IsEnrolled(userId, job.JobId))
+                {
+                    aux.Status = "Enrolled";
+                }
+                else
+                {
+                    aux.Status = "Available";
+                }
+                jobs.Add(aux);
             }
 
             return jobs;

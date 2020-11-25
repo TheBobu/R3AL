@@ -16,10 +16,10 @@ namespace R3AL.Controllers
             this.jobManager = jobManager;
         }
 
-        [HttpGet("List")]
-        public ActionResult<List<JobDto>> GetJobs()
+        [HttpGet("{id}/List")]
+        public ActionResult<List<JobDto>> GetJobs([FromRoute] int id)
         {
-            return jobManager.GetJobs();
+            return jobManager.GetJobs(id);
         }
 
         [HttpGet("{id}/extended")]
