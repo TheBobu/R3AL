@@ -54,12 +54,28 @@ namespace R3AL.Core.Services.Implementations
                 .ToList();
         }
 
+        public IEnumerable<Goal> GetGoalsByJobId(int id)
+        {
+            return Context
+                .Goals
+                .Where(x => x.JobId.Equals(id))
+                .ToList();
+        }
+
         public IEnumerable<Goal> GetGoalsByUserId(int userId)
         {
             return Context
                 .Goals
                 .Where(x => x.UserId.Equals(userId))
                 .ToList();
+        }
+
+        public int GetNumberOfGoals(int jobId)
+        {
+            return Context
+                .Goals
+                .Where(x => x.JobId.Equals(jobId))
+                .Count();
         }
 
         public Goal UpdateGoal(Goal goal)

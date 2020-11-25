@@ -24,7 +24,7 @@ namespace R3AL.Core.Manager.Implementations
             this.projectService = projectService;
             this.quizService = quizService;
         }
-        public IEnumerable<GoalDto> GetGoals(int userId)
+        public List<GoalDto> GetGoals(int userId)
         {
             return mapper.Map<List<GoalDto>>(goalService.GetGoalsByUserId(userId));
         }

@@ -14,5 +14,8 @@ namespace R3AL.Data.Entities
         public Goal Goal { get; set; }
 
         public int Score { get; set; }
+
+        [Required]
+        public string Title { get; set; }
     }
 }

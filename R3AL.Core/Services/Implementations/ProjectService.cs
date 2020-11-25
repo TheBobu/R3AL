@@ -37,6 +37,14 @@ namespace R3AL.Core.Services.Implementations
             return true;
         }
 
+        public int GetNumberOfProjects(int goalId)
+        {
+            return Context
+                .ProjectGoals
+                .Where(x => x.GoalId.Equals(goalId))
+                .Count();
+        }
+
         public Project GetProjectById(int id)
         {
             var project = Context
@@ -45,6 +53,15 @@ namespace R3AL.Core.Services.Implementations
                 .FirstOrDefault();
 
             return project;
+        }
+
+        public IEnumerable<Project> GetProjectsByJobId(int id)
+        {
+            return Context
+                .ProjectGoals
+                .Where(x => x.Goal.JobId.Equals(id))
+                .Select(x => x.Project)
+                .ToList();
         }
 
         public IEnumerable<Project> GetProjects()

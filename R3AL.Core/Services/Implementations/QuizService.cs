@@ -35,6 +35,14 @@ namespace R3AL.Core.Services.Implementations
             return true;
         }
 
+        public int GetNumberOfQuizzes(int goalId)
+        {
+            return Context
+                .Quizzes
+                .Where(x => x.GoalId.Equals(goalId))
+                .Count();
+        }
+
         public Quiz GetQuizById(int quizId)
         {
             return Context
@@ -48,6 +56,14 @@ namespace R3AL.Core.Services.Implementations
             return Context
                 .Quizzes
                 .Where(x => x.GoalId.Equals(goalId))
+                .ToList();
+        }
+
+        public IEnumerable<Quiz> GetQuizzesByJobId(int jobId)
+        {
+            return Context
+                .Quizzes
+                .Where(x => x.Goal.JobId.Equals(jobId))
                 .ToList();
         }
 
