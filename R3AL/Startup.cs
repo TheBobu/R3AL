@@ -46,17 +46,24 @@ namespace R3AL
             services.AddAutoMapper(typeof(UserMapper));
             services.AddAutoMapper(typeof(GoalMapper));
             services.AddAutoMapper(typeof(ProjectMapper));
+            services.AddAutoMapper(typeof(QuizMapper));
+            services.AddAutoMapper(typeof(JobMapper));
         }
 
         private void ConfigureManagerServices(IServiceCollection services)
         {
             services.AddScoped<IAuthenticationManager, AuthenticationManager>();
+            services.AddScoped<IGoalManager, GoalManager>();
+            services.AddScoped<IQuizManager, QuizManager>();
+            services.AddScoped<IJobManager, JobManager>();
+            services.AddScoped<IProjectManager, ProjectManager>();
 
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IGoalService, GoalService>();
             services.AddScoped<IQuizService, QuizService>();
             services.AddScoped<IProjectService, ProjectService>();
             services.AddScoped<IQuestionService, QuestionService>();
+            services.AddScoped<IJobService, JobService>();
         }
 
         private void ConfigureDatabaseServices(IServiceCollection services)
