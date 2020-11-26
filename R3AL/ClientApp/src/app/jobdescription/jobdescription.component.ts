@@ -23,18 +23,6 @@ export class JobdescriptionComponent {
     open(content) {
       this.modalService.open(content, { size: 'lg' });
     }
-
-opened: boolean = false;
-showMe: boolean = false;
-
-onClick(event) {
-   if(!this.opened) {
-       this.opened = true;
-       setTimeout(() => {
-            this.showMe = true;
-       }, 5000)
-   }
-}
   }
 
   interface Joblist{
