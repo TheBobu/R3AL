@@ -12,8 +12,18 @@
             <h5>Description</h5>
             <p>{{ job.description }}</p>
             <br />
-            <h5>Requirements</h5>
-            <p>{{ job.requirements }}</p>
+            <button class=" btn btn-primary "(click)="open(content)">Requirements</button>
+            <ng-template #content let-modal>
+              <div class="modal-header">
+                <h4 class="modal-title" id="modal-basic-title">Requirements</h4>
+                <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                  <pdf-viewer [src]="job.requirements" [render-text]="true" style="display: block;"></pdf-viewer>
+            </div>
+            </ng-template>
           </div>
         </div>
       </div>
@@ -63,7 +73,7 @@
   </div>
   <div class="row">
     <div class="col-12">
-      <button class="btn pull-right">Enroll</button>
+      <button class="btn enroll pull-right">Enroll</button>
     </div>
   </div>
 </div>
