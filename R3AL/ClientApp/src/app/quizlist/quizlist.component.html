@@ -6,34 +6,35 @@
       <div class="course">
         <div class="course-preview">
           <h6>Title</h6>
-          <h2>{{item.name}}</h2>
+          <h2>{{ item.name }}</h2>
         </div>
         <div class="course-info">
           <!-- <div class="progress-container">
-            <div class="progress"></div>
-            <span class="progress-text">
-              6/9 Challenges
-            </span>
-          </div> -->
+				<div class="progress"></div>
+				<span class="progress-text">
+					6/9 Challenges
+				</span>
+			</div> -->
           <div class="items-body">
             <a href="#">
               <div class="items-body-content">
-                <span>{{item.numberOfProjects}} Projects</span>
+                <span>{{ item.numberOfProjects }} Projects</span>
                 <i class="fa fa-angle-right"></i>
-                <span>{{item.numberOfQuizzes}} Quizzes</span>
+                <span>{{ item.numberOfQuizzes }} Quizzes</span>
                 <i class="fa fa-angle-right"></i>
-                <span>{{item.numberOfGoals}} Goals</span>
+                <span>{{ item.numberOfGoals }} Goals</span>
                 <i class="fa fa-angle-right"></i>
               </div>
             </a>
           </div>
           <div class="row">
             <div class="col-12">
-              <button class="btn pull-right" (click)="goToJob(item.jobId)">Enroll</button>
+              <button class="btn pull-right">Enroll</button>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <!-- </div> -->
   </div>
 </div>

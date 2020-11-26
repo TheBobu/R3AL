@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Inject } from '@angular/core';
 import { inject } from "@angular/core/testing";
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { getBaseUrl } from "src/main";
 import { ActivatedRoute } from '@angular/router';
 @Component({
@@ -12,11 +13,16 @@ export class JobdescriptionComponent {
 
   public job = {} as Joblist;
 
-  constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string, route: ActivatedRoute){
+    constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string, route: ActivatedRoute, private modalService: NgbModal){
     let currentId = route.snapshot.paramMap.get("id");
     http.get<Joblist>(baseUrl+"api/jobs/"+currentId+"/extended").subscribe(result=>{
       this.job= result;
     }, error=>console.log(error));
+
+    }
+    
+    open(content) {
+      this.modalService.open(content, { size: 'lg' });
     }
   }
 
