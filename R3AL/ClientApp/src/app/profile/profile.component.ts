@@ -12,12 +12,14 @@ import { ActivatedRoute, Router } from "@angular/router";
 })
 export class ProfileComponent {
   public user: Profile;
-
+  private router: Router
   constructor(
     http: HttpClient,
     @Inject("BASE_URL") baseUrl: string,
-    route: ActivatedRoute
+    route: ActivatedRoute,
+    router: Router
   ) {
+    this.router = router;
     let currentId = route.snapshot.paramMap.get("id");
     http
       .get<Profile>(baseUrl + "api/login/" + currentId + "/extended")
@@ -28,6 +30,11 @@ export class ProfileComponent {
         (error) => console.log(error)
       );
   }
+
+  myGoals() {
+    this.router.navigate(["/goals", { id: this.user.userId }]);
+  }
+
 }
 
 interface Profile {

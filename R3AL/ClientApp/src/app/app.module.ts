@@ -15,6 +15,7 @@ import { RegisterComponent } from "./register/register.component";
 import { AngularFontAwesomeModule } from "angular-font-awesome";
 import { JoblistComponent } from "./joblist/joblist.component";
 import { JobdescriptionComponent } from "./jobdescription/jobdescription.component";
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { JobdescriptionComponent } from "./jobdescription/jobdescription.compone
     FormsModule,
     NgbModule,
     AngularFontAwesomeModule,
+    PdfViewerModule,
     RouterModule.forRoot([
       { path: "", component: HomeComponent, pathMatch: "full" },
       { path: "quiz", component: QuizComponent },

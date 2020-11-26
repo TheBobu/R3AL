@@ -1,1 +1,25 @@
 <app-nav-menu></app-nav-menu>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 mb-3" *ngFor="let item of goals">
+      <div class="card h-100">
+        <div class="card-body">
+          <h6 class="d-flex align-items-center mb-3">
+            <i class="material-icons text-info mr-2">assignment</i>Goals
+          </h6>
+          <div>
+            <h5>{{ item.title }}</h5>
+            <div class="progress mb-3" style="height: 5px">
+              <div class="progress-bar bg-primary"
+                   role="progressbar"
+                   [style.width]="
+                          (item.currentProgress / item.milestones) * 100 + '%'
+                        "></div>
+            </div>
+            <p>{{item.description}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
