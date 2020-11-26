@@ -12,6 +12,7 @@ namespace R3AL.Core.AutoMapper
         {
             CreateMap<Goal, GoalLightDto>()
                 .ForMember(d => d.GoalStatus, o => o.MapFrom(s => Enum.GetName(typeof(GoalStatus), s.GoalStatus)));
+            CreateMap<Goal, GoalDto>();
         }
     }
 }
