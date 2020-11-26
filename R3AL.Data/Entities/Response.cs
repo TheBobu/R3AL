@@ -1,8 +1,5 @@
-﻿fusing System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
 
 namespace R3AL.Data.Entities
 {
@@ -13,6 +10,7 @@ namespace R3AL.Data.Entities
 
         [Required]
         public int QuestionId { get; set; }
+
         public Question Question { get; set; }
 
         [Required]
