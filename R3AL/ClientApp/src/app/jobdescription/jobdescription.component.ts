@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, Inject } from '@angular/core';
 import { inject } from "@angular/core/testing";
 import { getBaseUrl } from "src/main";
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-jobdescription',
   templateUrl: './jobdescription.component.html',
@@ -9,11 +10,11 @@ import { getBaseUrl } from "src/main";
 })
 export class JobdescriptionComponent {
 
-  public job : Joblist;
+  public job = {} as Joblist;
 
-  constructor(http:HttpClient, @Inject('BASE_URL') baseUrl:string){
-    
-    http.get<Joblist>(baseUrl+"api/jobs/1/extended").subscribe(result=>{
+  constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string, route: ActivatedRoute){
+    let currentId = route.snapshot.paramMap.get("id");
+    http.get<Joblist>(baseUrl+"api/jobs/"+currentId+"/extended").subscribe(result=>{
       this.job= result;
     }, error=>console.log(error));
     }
@@ -31,8 +32,8 @@ export class JobdescriptionComponent {
     statusProgress: number;
     milestones: number;
     requirements: string;
-    goals : Goal[];
     projects: Project[];
+    goals : Goal[];
     quizzes: Quiz[];
   }
 

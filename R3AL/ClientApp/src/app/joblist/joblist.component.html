@@ -1,37 +1,38 @@
+<app-nav-menu></app-nav-menu>
 <div class="container-fluid">
   <div *ngFor="let item of job" class="col-md-6 col-sm-12">
-  <div class="courses-container">
-    <div class="course">
-      <div class="course-preview">
-        <h6>Title</h6>
-        <h2>{{item.name}}</h2>
-      </div>
-      <div class="course-info">
-        <!-- <div class="progress-container">
-				<div class="progress"></div>
-				<span class="progress-text">
-					6/9 Challenges
-				</span>
-			</div> -->
-        <div class="items-body">
-          <a href="#">
-            <div class="items-body-content">
-              <span>{{item.numberOfProjects}} Projects</span>
-              <i class="fa fa-angle-right"></i>
-              <span>{{item.numberOfQuizzes}} Quizzes</span>
-              <i class="fa fa-angle-right"></i>
-              <span>{{item.numberOfGoals}} Goals</span>
-              <i class="fa fa-angle-right"></i>
-            </div>
-          </a>
+    <div class="courses-container">
+      <div class="course">
+        <div class="course-preview">
+          <h6>Title</h6>
+          <h2>{{item.name}}</h2>
         </div>
-        <div class="row">
-          <div class="col-12">
-            <button class="btn pull-right" (click)="goToJob(item.jobId)">Enroll</button>
+        <div class="course-info">
+          <!-- <div class="progress-container">
+            <div class="progress"></div>
+            <span class="progress-text">
+              6/9 Challenges
+            </span>
+          </div> -->
+          <div class="items-body">
+            <a href="#">
+              <div class="items-body-content">
+                <span>{{item.numberOfProjects}} Projects</span>
+                <i class="fa fa-angle-right"></i>
+                <span>{{item.numberOfQuizzes}} Quizzes</span>
+                <i class="fa fa-angle-right"></i>
+                <span>{{item.numberOfGoals}} Goals</span>
+                <i class="fa fa-angle-right"></i>
+              </div>
+            </a>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <button class="btn pull-right" (click)="goToJob(item.jobId)">Enroll</button>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <!-- </div> -->
 </div>
